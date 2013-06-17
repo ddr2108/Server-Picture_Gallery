@@ -15,7 +15,11 @@ function fileStruct($dir){
 	if ((strpos($item, '.')===FALSE)){
 		$href = '?dir=' . $dir . '/'  . $item;  
 		echo "<a href =\"$href\">$item</a><br>";
-	}
+	//if picture, then put a different type of link
+	} else if (strpos($item, '.JPG')){
+                $href = substr($dir, 1) . '/' . $item;
+                echo "<a href =\"$href\">$item</a><br>";
+        }
     }
 
 } 
