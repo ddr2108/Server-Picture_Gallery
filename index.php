@@ -26,7 +26,9 @@ function fileStruct($dir){
 
 ?>
  
-<html><body> 
+<html><body>
+ 
+<p><b>Pictures</b></p>
 
 <?php 
 //Check if directory is set
@@ -40,5 +42,3 @@ fileStruct($dir)
 ?> 
 
 </body></html>
-
-
