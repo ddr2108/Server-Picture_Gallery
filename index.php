@@ -2,7 +2,7 @@
 
 //Print the folder structure
 function fileStruct($dir){
-    $rows = 3;
+    $rows = 5;
     $i = 0;
 
     //Get working directory of pictures
@@ -30,7 +30,7 @@ function fileStruct($dir){
 		$i++;	
 		//Create image thumbnail link
                 $href = substr($dir, 1) . '/' . $item;
-                echo "<td><a href =\"$href\"><img src=\"$href\" height = 42 width = 42></a></td>";
+                echo "<td><a href =\"$href\"><img src=\"$href\" height = 150 width = 150></a></td>";
         }
     }
 
