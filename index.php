@@ -3,7 +3,8 @@
 //Print the folder structure
 function fileStruct($dir){
     $rows = 5;
-    $i = 0;
+    $colNum = 0;
+    $picNum = 0;
 
     //Get working directory of pictures
     $rootDir = getcwd();
@@ -23,14 +24,17 @@ function fileStruct($dir){
 	//if picture, then put a different type of link
 	} else if (strpos($item, '.JPG')){
 		//Organize pictures into rows
-       		if ($i==$rows){
+       		if ($colNum==$rows){
                 	echo "</tr><tr>";
-                	$i = 0;
+                	$colNum = 0;
         	}
-		$i++;	
-		//Create image thumbnail link
+		$colNum++;
+		$picNum++;
+		//Link to image
                 $href = substr($dir, 1) . '/' . $item;
-                echo "<td><a href =\"$href\"><img src=\"$href\" height = 150 width = 150></a></td>";
+                //Link to send to slide.php
+		$fileGet = 'slide.php?file='  . $dir .  $picNum;
+		echo "<td><a href =\"$fileGet\"><img src=\"$href\" height = 150 width = 150></a></td>";
         }
     }
 
