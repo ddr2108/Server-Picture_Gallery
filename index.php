@@ -2,12 +2,17 @@
 
 //Print the folder structure
 function fileStruct($dir){
+    $rows = 3;
+    $i = 0;
+
     //Get working directory of pictures
     $rootDir = getcwd();
     $cwd = $rootDir  .  $dir;
 
     //Files in current directory
     $files = scandir($cwd);
+
+    echo "<table><tr>";
 
     //Go through each file and create link
     foreach ($files as $item){
@@ -17,10 +22,19 @@ function fileStruct($dir){
 		echo "<a href =\"$href\">$item</a><br>";
 	//if picture, then put a different type of link
 	} else if (strpos($item, '.JPG')){
+		//Organize pictures into rows
+       		if ($i==$rows){
+                	echo "</tr><tr>";
+                	$i = 0;
+        	}
+		$i++;	
+		//Create image thumbnail link
                 $href = substr($dir, 1) . '/' . $item;
-                echo "<a href =\"$href\">$item</a><br>";
+                echo "<td><a href =\"$href\"><img src=\"$href\" height = 42 width = 42></a></td>";
         }
     }
+
+    echo "</tr></table>";
 
 } 
 
