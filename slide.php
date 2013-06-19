@@ -36,8 +36,8 @@ function slideshow($file){
     }
  
     //Include home button 
-    //$home = ;
-    echo "<td><a href =\"$prevImageFile\">Home</a></td>";
+    $home = 'index.php?dir=' . $imageLink;
+    echo "<td><a href =\"$home\">Home</a></td>";
  
     //Get path of next picture
     $nextImage = $imageLink . '/' . $files[$imageIndex+1];
