@@ -13,6 +13,14 @@ function fileStruct($dir){
     //Files in current directory
     $files = scandir($cwd);
 
+
+    //Up one directory
+    $posUp = strrpos($dir, '/');
+    $upDir = substr($dir, 0, $posUp);
+    $up  = '?dir=' . $upDir;
+    echo "<a href =\"$up\">Up One Directory</a><br><br>";
+
+    //Create table
     echo "<table><tr>";
 
     //Go through each file and create link
