@@ -22,8 +22,33 @@ function slideshow($file){
     $image = substr($image, 1);    
 
     //Print image
-    echo '<table><tr><td>';
-    echo "<img src =\"$image\"  height = 600 width = 900></td></tr>";
+    echo '<table height=450 width=650>';
+    echo "<tr><td><a href =\"$image\"><img src=\"$image\"  height=400 width=600></a></td></tr>";
+
+    //Get path of previous  picture
+    $prevImage = $imageLink . '/' . $files[$imageIndex-1];
+    $prevImage = substr($prevImage, 1);
+    if (strpos($prevImage, '.JPG')){
+	$prevImageFile = '?file=' . substr($file, 0, $imageEnd) . '-' . ($imageIndex-1);
+        echo "<tr><td><a href =\"$prevImageFile\">Previous Image</a></td>";    	
+    }else{
+	echo "<tr><td>Previous Image</a></td>";
+    }
+ 
+    //Include home button 
+    //$home = ;
+    echo "<td><a href =\"$prevImageFile\">Home</a></td>";
+ 
+    //Get path of next picture
+    $nextImage = $imageLink . '/' . $files[$imageIndex+1];
+    $nextImage = substr($nextImage, 1);  
+    if (strpos($nextImage, '.JPG')){
+        $nextImageFile = '?file=' . substr($file, 0, $imageEnd) . '-' . ($imageIndex+1);
+        echo "<tr><td><a href =\"$nextImageFile\">Next Image</a></td>";
+    }else{
+	echo "<tr><td>Next Image</a></td>";
+    }
+   
     echo '</table>';
 }
 ?>
