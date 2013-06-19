@@ -29,13 +29,13 @@ function fileStruct($dir){
                 	$colNum = 0;
         	}
 		$colNum++;
-		$picNum++;
 		//Link to image
                 $href = substr($dir, 1) . '/' . $item;
                 //Link to send to slide.php
-		$fileGet = 'slide.php?file='  . $dir .  $picNum;
+		$fileGet = 'slide.php?file='  . $dir . '-'  . $picNum;
 		echo "<td><a href =\"$fileGet\"><img src=\"$href\" height = 150 width = 150></a></td>";
         }
+	$picNum++;
     }
 
     echo "</tr></table>";
