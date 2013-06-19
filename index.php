@@ -2,7 +2,7 @@
 
 //Print the folder structure
 function fileStruct($dir){
-    $rows = 5;
+    $rows = 8;
     $colNum = 0;
     $picNum = 0;
 
