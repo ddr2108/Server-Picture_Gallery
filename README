@@ -1,11 +1,2 @@
 This will be a pretty picture gallery for a Ubuntu 10.04 server
 
-echo "<script type='text/javascript' src='link.js'></script>";
-  6 
-  7 $dir    = getcwd();
-  8 $files = scandir($dir);
-  9         
- 10 foreach($files as $specificFile){
- 11         echo "<a href onclick='javascript:clickLink()'>$specificFile</a>";
- 12         echo "<br>";
- 13 }
