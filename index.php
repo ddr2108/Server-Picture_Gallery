@@ -1,8 +1,8 @@
 <?php
-
 //Print the folder structure
 function fileStruct($dir){
     $rows = 8;
+    $stdWidth = 100;
     $colNum = 0;
     $picNum = 0;
 
@@ -41,8 +41,8 @@ function fileStruct($dir){
                 $href = substr($dir, 1) . '/' . $item;
                 //Link to send to slide.php
 		$fileGet = 'slide.php?file='  . $dir . '-'  . $picNum;
-		echo "<td><a href =\"$fileGet\"><img src=\"$href\" height = 150 width = 150></a></td>";
-        }
+		echo "<td><a href =\"$fileGet\"><img src=\"$href\" width=150></a></td>";
+	 }
 	$picNum++;
     }
 
